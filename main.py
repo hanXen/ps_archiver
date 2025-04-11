@@ -46,7 +46,7 @@ def main(url: str, dir_path: str = "archive") -> None:
         dir_path = f"archive/{supported_sites.get('leetcode')}/{topic}/{title}"
 
     else:
-        raise NotImplementedError("Unsupported site.")
+        raise NotImplementedError(f"[-] Unsupported site: {url}")
 
     markdown_content = generate_markdown(url, title, description)
     save_as_markdown(dir_path, markdown_content)

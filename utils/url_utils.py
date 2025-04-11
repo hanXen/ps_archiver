@@ -27,7 +27,7 @@ def fetch_problem_page(url: str, json_data: dict = None) -> str:
     """
     response = requests.get(url, json=json_data, timeout=10)
     if not response.ok:
-        raise requests.exceptions.HTTPError(f"Failed to fetch the page: {response.status_code}")
+        raise requests.exceptions.HTTPError(f"[-] Failed to fetch the page: {response.status_code}")
     return response.text
 
 
