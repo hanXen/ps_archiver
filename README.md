@@ -25,7 +25,7 @@ This tool is ideal for:
 
 - **Problem-Solvers and Learners**: Those who want to document and organize solved problems to improve their coding skills.  
 - **Coding Test Takers**: Individuals preparing for coding interviews or competitive programming, who want to organize practice problems by category or difficulty.  
-- **Security-Conscious Users**: Users who prefer not to store sensitive information like GitHub credentials in browser extensions. (as this might pose a potential security risk 🫢).
+- **Security-Conscious Users**: Users who prefer not to store sensitive information like GitHub credentials in browser extensions. (as this might pose a potential security risk 🫢)
 
 
 ---
@@ -54,6 +54,7 @@ uv run main.py -u <problem_url>
 ```
 
 ### Example
+
 ```bash
 # leetcode.com
 uv run main.py -u "https://leetcode.com/problems/counting-bits/description/?envType=problem-list-v2&envId=dynamic-programming"
@@ -68,6 +69,7 @@ uv run main.py -u "https://school.programmers.co.kr/learn/courses/30/lessons/176
 
 
 ### Output Directory Structure
+
 For the above example, the parsed problem will be saved as:
 
 ```
@@ -129,3 +131,8 @@ This methodical approach helps reinforce learning while addressing targeted weak
 ### License
 
 This project is licensed under the [MIT License](./LICENSE).
+
+
+---
+
+👉 [한글(Korean) README](./README_ko.md)
