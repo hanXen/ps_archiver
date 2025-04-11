@@ -14,8 +14,7 @@ import json
 from types import SimpleNamespace
 from typing import Tuple
 
-from utils.url_utils import fetch_problem_page
-from utils.markdown_utils import html_to_md
+from utils import fetch_problem_page, html_to_md
 
 
 def query_leetcode_problem(url: str) -> Tuple[str, str, str]:

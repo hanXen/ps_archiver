@@ -15,8 +15,7 @@ from typing import Tuple
 
 from bs4 import BeautifulSoup
 
-from utils.url_utils import fetch_problem_page
-from utils.markdown_utils import soup_to_md
+from utils import fetch_problem_page, soup_to_md
 
 
 def parse_programmers_problem(url: str) -> Tuple[str, str, str]:

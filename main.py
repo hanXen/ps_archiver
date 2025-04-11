@@ -11,11 +11,8 @@ Currently supports LeetCode and Programmers platforms.
 import argparse
 import logging
 
-from parsers.programmers_parser import parse_programmers_problem
-from parsers.leetcode_parser import query_leetcode_problem
-from utils.file_utils import save_as_markdown
-from utils.markdown_utils import generate_markdown
-from utils.url_utils import validate_and_transform_leetcode_url
+from parsers import parse_programmers_problem, query_leetcode_problem
+from utils import save_as_markdown, generate_markdown, validate_and_transform_leetcode_url
 
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
