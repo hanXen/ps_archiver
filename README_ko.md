@@ -1,6 +1,6 @@
 # ps_archiver
 
-`ps_archiver` (Problem Solving Archiver)는 **Programmers**와 **LeetCode** 같은 플랫폼에서 코딩 문제 설명을 파싱하고 이를 Markdown 파일로 아카이빙하는 Python 도구입니다.
+`ps_archiver` (Problem Solving Archiver)는 **Programmers**와 **LeetCode** 같은 플랫폼에서 코딩 문제 설명을 파싱하고 이를 마크다운 파일로 아카이빙하는 Python 도구입니다.
 
 ---
 
@@ -10,20 +10,18 @@
   - [Programmers](https://programmers.co.kr)와 [LeetCode](https://leetcode.com) 문제 파싱 지원
   - 플랫폼별 디렉토리에 문제를 자동으로 분류 및 저장
 
-- **Markdown 생성**:
-  - 문제 URL을 입력받아 구조화된 Markdown 파일을 생성
-  - 깔끔하고 일관된 형식으로 정리하여 쉽게 참고하고 공유 가능
+- **마크다운 생성**:
+  - URL을 입력받아 문제 description을 파싱하여 마크다운 파일로 저장
+  - 깔끔하고 일관된 형식으로 생성되어 체계적인 학습 및 정리 가능
 
 - **아카이빙**:
-  - 문제를 체계적인 디렉토리 구조에 저장:
+  - 문제 분류 및 저장 방법:
     - Programmers 문제는 난이도별로 분류
     - LeetCode 문제는 `dynamic-programming` 같은 태그별로 분류
 
 ---
 
 ## 🤔 누가 사용하면 좋을까요?
-
-이 도구는 다음과 같은 사용자에게 적합합니다:
 
 - **Problem-Solver 및 학습자**: 문제 풀이를 체계적으로 기록하고 코딩 실력을 향상시키고 싶은 분들
 - **코딩 테스트 준비생**: 코딩 면접이나 알고리즘 대회를 준비하며 연습 문제를 난이도나 카테고리별로 정리하고 싶은 분들
@@ -90,9 +88,9 @@ archive/
 
 ---
 
-## 📝 Markdown 출력
+## 📝 마크다운 출력
 
-생성된 Markdown 파일의 기본 구조는 다음과 같습니다:
+생성된 마크다운 파일의 기본 구조는 다음과 같습니다:
 
 ```markdown
 # [Problem Title]
@@ -109,9 +107,9 @@ archive/
 (Add your notes here)
 ```
 
-#### ✅ **사용자 정의**
+#### ✅ **마크다운 커스터마이징**
 
-`utils.markdown_utils.py` 모듈의 `generate_markdown()` 함수에서 Markdown 출력 형식을 사용자 정의할 수 있습니다. 구조, 헤딩, 추가 섹션 등을 필요에 따라 수정할 수 있습니다.
+`utils.markdown_utils.py` 모듈의 `generate_markdown()` 함수에서 마크다운 출력 형식을 사용자 정의할 수 있습니다. 구조, 헤딩, 추가 섹션 등을 필요에 따라 수정할 수 있습니다.
 
 ---
 
