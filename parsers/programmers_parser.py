@@ -32,18 +32,18 @@ def parse_programmers_problem(url: str) -> Tuple[str, str, str]:
         NotImplementedError: If the page structure has changed and cannot be parsed.
     """
     html = fetch_problem_page(url)
-    soup = BeautifulSoup(html, 'html.parser')
+    soup = BeautifulSoup(html, "html.parser")
 
     title = soup.find("span", class_="challenge-title").text.strip()
-    level = soup.find('div', class_='lesson-content')['data-challenge-level']
-    description = soup.find('div', class_='guide-section-description')
+    level = soup.find("div", class_="lesson-content")["data-challenge-level"]
+    description = soup.find("div", class_="guide-section-description")
 
     if not (title and level and description):
         logging.debug("Title: %s | Level: %s | Description:\n%s", title, level, description)
         raise NotImplementedError("[-] programmers.co.kr may be updated.")
 
-    for header_tag in soup.find_all(['h5', 'h6']):
-        header_tag.name = 'h3'
+    for header_tag in soup.find_all(["h5", "h6"]):
+        header_tag.name = "h3"
 
     description = soup_to_md(description).strip()
 

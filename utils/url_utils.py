@@ -49,13 +49,13 @@ def validate_and_transform_leetcode_url(url: str) -> str:
     if not url.startswith(base_url):
         raise ValueError("[-] Invalid URL: Not a LeetCode problem URL.")
 
-    if '?' in url:
-        path, query = url.split('?', 1)
+    if "?" in url:
+        path, query = url.split("?", 1)
     else:
         path, query = url, ""
 
-    path_parts = path[len(base_url):].split('/')
-    if len(path_parts) < 3 and (not path_parts[0] or path_parts[0] == 'description'):
+    path_parts = path[len(base_url):].split("/")
+    if len(path_parts) < 3 and (not path_parts[0] or path_parts[0] == "description"):
         raise ValueError("[-] Invalid URL: Problem name is missing.")
 
     if len(path_parts) > 1 and path_parts[1] != "description":

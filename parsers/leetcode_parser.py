@@ -47,8 +47,8 @@ def query_leetcode_problem(url: str) -> Tuple[str, str, str]:
                     "}"
     }
 
-    title_slug = url.split('/problems/')[1].split('/description')[0]
-    json_data['variables']['titleSlug'] = title_slug
+    title_slug = url.split("/problems/")[1].split("/description")[0]
+    json_data["variables"]["titleSlug"] = title_slug
 
     problem_info = json.loads(
         fetch_problem_page("https://leetcode.com/graphql", json_data=json_data),
@@ -56,7 +56,7 @@ def query_leetcode_problem(url: str) -> Tuple[str, str, str]:
     ).data.question
 
     title = f"{problem_info.questionId}. {problem_info.title}"
-    topic = f"{url.split('envId=')[1]}/" if '?' in url else ""
+    topic = f"{url.split("envId=")[1]}/" if "?" in url else ""
     description = html_to_md(problem_info.content)
 
     return title, topic, description

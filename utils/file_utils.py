@@ -20,5 +20,5 @@ def save_as_markdown(dir_path: str, markdown_content: str, filename: str = "READ
     """
     if not os.path.exists(dir_path):
         os.makedirs(dir_path, exist_ok=True)
-    with open(f"{dir_path}/{filename}", 'w', encoding='utf-8') as f:
+    with open(f"{dir_path}/{filename}", "w", encoding="utf-8") as f:
         f.write(markdown_content)
