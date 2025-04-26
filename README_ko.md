@@ -109,15 +109,17 @@ archive/
 
 #### ✅ **마크다운 커스터마이징**
 
-`utils.markdown_utils.py` 모듈의 `generate_markdown()` 함수에서 마크다운 출력 형식을 사용자 정의할 수 있습니다. 구조, 헤딩, 추가 섹션 등을 필요에 따라 수정할 수 있습니다.
+- `utils.markdown_utils.py` 모듈의 `generate_markdown()` 함수에서 마크다운 출력 형식을 커스터마이징할 수 있습니다.  
+  
+- 구조, 헤딩, 추가 섹션 등을 필요에 따라 수정하세요.
 
 ---
 
-## 🎯 제안하는 학습 방법
+## 🎯 학습 방법
 
 1. **Programmers로 시작하기**:
     
-    - [Programmers](https://programmers.co.kr/)에서 난이도별 문제를 풀며 알고리즘 및 자료 구조의 기초를 다지세요.
+    - [Programmers](https://programmers.co.kr/)에서 난이도에 따라 문제를 풀며 알고리즘 및 자료 구조의 기초를 다지세요.
         
 2. **LeetCode로 심화 학습하기**:
     
@@ -126,7 +128,7 @@ archive/
     - [LeetCode](https://leetcode.com/)의 방대한 문제집을 활용하여 해당 카테고리의 문제를 추가로 연습하세요.
         
 
-이 방법은 체계적인 학습을 가능하게 하며 약점을 보완하는 데 도움을 줍니다.
+이 방법은 체계적인 학습을 가능하게 하며, 약점을 보완하는 데 도움을 줍니다.
 
 ---
 
