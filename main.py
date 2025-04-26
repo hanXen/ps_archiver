@@ -7,7 +7,6 @@ This module handles user input, orchestrates the parsing and archiving process.
 Currently supports LeetCode and Programmers platforms.
 """
 
-
 import argparse
 import logging
 

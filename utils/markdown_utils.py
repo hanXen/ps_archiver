@@ -4,7 +4,6 @@ Module: markdown_utils
 Provides utilities for converting problem descriptions from HTML to Markdown.
 """
 
-
 from markdownify import MarkdownConverter
 
 

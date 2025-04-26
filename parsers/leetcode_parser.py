@@ -9,7 +9,6 @@ This module includes functions to:
 - Convert problem descriptions into Markdown format.
 """
 
-
 import json
 from types import SimpleNamespace
 from typing import Tuple
