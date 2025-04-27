@@ -45,7 +45,7 @@ def main(url: str, dir_path: str = "archive") -> None:
         raise NotImplementedError(f"[-] Unsupported site: {url}")
 
     markdown_content = generate_markdown(url, title, description)
-    save_as_markdown(dir_path, markdown_content)
+    save_as_markdown(dir_path, markdown_content, make_solve_py=True)
 
     logging.info("[+] Markdown file generated successfully!")
     logging.info("[+] Path: %s/README.md", dir_path)
