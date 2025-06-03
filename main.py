@@ -11,7 +11,8 @@ import argparse
 import logging
 
 from parsers import parse_programmers_problem, query_leetcode_problem
-from utils import save_as_markdown, generate_markdown, validate_and_transform_leetcode_url
+from utils import sanitize_dir_name, save_as_markdown
+from utils import generate_markdown, validate_and_transform_leetcode_url
 
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
@@ -34,12 +35,15 @@ def main(url: str, dir_path: str = "archive") -> None:
     if supported_sites.get("programmers") in url:
         url = url.split("?")[0]
         title, level, description = parse_programmers_problem(url)
-        dir_path = f"archive/{supported_sites.get("programmers")}/LV.{level}/{title}"
+        sanitized_title = sanitize_dir_name(title)
+        dir_path = f"archive/{supported_sites.get("programmers")}/LV.{level}/{sanitized_title}"
 
     elif supported_sites.get("leetcode") in url:
         url = validate_and_transform_leetcode_url(url)
         title, topic, description = query_leetcode_problem(url)
-        dir_path = f"archive/{supported_sites.get("leetcode")}/{topic}/{title}"
+        sanitized_topic = sanitize_dir_name(topic)
+        sanitized_title = sanitize_dir_name(title)
+        dir_path = f"archive/{supported_sites.get("leetcode")}/{sanitized_topic}/{sanitized_title}"
 
     else:
         raise NotImplementedError(f"[-] Unsupported site: {url}")

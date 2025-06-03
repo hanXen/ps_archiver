@@ -6,6 +6,21 @@ including handling directory creation if necessary.
 """
 
 import os
+import re
+
+
+def sanitize_dir_name(dir_name: str) -> str:
+    """
+    Removes characters invalid in Windows directory names.
+
+    Args:
+        dir_name (str): The directory name to sanitize.
+
+    Returns:
+        str: The sanitized directory name.
+    """
+    invalid_chars = r"[<>:\"/\\|?*]"
+    return re.sub(invalid_chars, "", dir_name).strip()
 
 
 def save_as_markdown(dir_path: str, markdown_content: str, filename: str = "README.md",
