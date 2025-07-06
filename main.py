@@ -24,13 +24,14 @@ supported_sites = {
 }
 
 
-def main(url: str, dir_path: str = "archive") -> None:
+def main(url: str, dir_path: str, md_only: bool) -> None:
     """
     Main function to process the given problem URL and save its description as a markdown file.
 
     Args:
         url (str): The URL of the problem.
-        dir_path (str): Directory path to save the Markdown file.
+        dir_path (str): The directory path to save the Markdown file.
+        md_only (bool): Only generate the Markdown file (skip solve.py)
     """
     if supported_sites.get("programmers") in url:
         url = url.split("?")[0]
@@ -49,7 +50,7 @@ def main(url: str, dir_path: str = "archive") -> None:
         raise NotImplementedError(f"[-] Unsupported site: {url}")
 
     markdown_content = generate_markdown(url, title, description)
-    save_as_markdown(dir_path, markdown_content, make_solve_py=True)
+    save_as_markdown(dir_path, markdown_content, make_solve_py=not md_only)
 
     logging.info("[+] Markdown file generated successfully!")
     logging.info("[+] Path: %s/README.md", dir_path)
@@ -62,6 +63,8 @@ if __name__ == "__main__":
     )
 
     parser.add_argument("-u", "--url", help="The URL of the problem.", required=True)
+    parser.add_argument("-m", "--md_only", help="Skip `solve.py`", default=False)
+    parser.add_argument("-d", "--dir", help="Directory to save the md file.", default="archive")
     args = parser.parse_args()
 
-    main(url=args.url)
+    main(url=args.url, dir_path=args.dir, md_only=args.md_only)
